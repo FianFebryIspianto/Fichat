@@ -26,6 +26,9 @@
     "stylis-plugin-rtl": "^2.0.2",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
