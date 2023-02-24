@@ -1,10 +1,13 @@
 import { faker } from "@faker-js/faker";
 import {
+  Archive,
   ChatCircleDots,
   Gear,
   GearSix,
   Phone,
   SignOut,
+  SpeakerSimpleX,
+  Trash,
   User,
   Users,
 } from "phosphor-react";
@@ -19,7 +22,7 @@ const Profile_Menu = [
     icon: <Gear />,
   },
   {
-    title: "Profile",
+    title: "Logout",
     icon: <SignOut />,
   },
 ];
@@ -219,7 +222,24 @@ const Message_options = [
     title: "Delete Message",
   },
 ];
-
+const Conversation_Menu = [
+  {
+    title: "Info",
+    icon: <User />,
+  },
+  {
+    title: "Mute",
+    icon: <SpeakerSimpleX />,
+  },
+  {
+    title: "Archive",
+    icon: <Archive />,
+  },
+  {
+    title: "Delete",
+    icon: <Trash />,
+  },
+];
 export {
   Profile_Menu,
   Nav_Setting,
@@ -227,4 +247,5 @@ export {
   ChatList,
   Chat_History,
   Message_options,
+  Conversation_Menu,
 };

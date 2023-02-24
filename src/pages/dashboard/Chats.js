@@ -12,7 +12,12 @@ import {
 } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { palette } from "@mui/system";
-import { ArchiveBox, CircleDashed, MagnifyingGlass } from "phosphor-react";
+import {
+  ArchiveBox,
+  Bell,
+  CircleDashed,
+  MagnifyingGlass,
+} from "phosphor-react";
 import React from "react";
 import { SimpleBarStyle } from "../../components/Scrollbar";
 import {
@@ -61,6 +66,9 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
           theme.palette.mode === "light"
             ? "#FFFFFF"
             : theme.palette.background.default,
+        "&:hover": {
+          cursor: "pointer",
+        },
       }}
       p={2}
     >
@@ -121,9 +129,15 @@ function Chats() {
           justifyContent={"space-between"}
         >
           <Typography variant="h5">Chats</Typography>
-          <IconButton>
-            <CircleDashed />
-          </IconButton>
+
+          <Stack direction={"row"}>
+            <IconButton>
+              <CircleDashed />
+            </IconButton>
+            <IconButton>
+              <Bell />
+            </IconButton>
+          </Stack>
         </Stack>
         <Stack sx={{ width: "100%" }}>
           <Search>
