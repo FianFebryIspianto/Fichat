@@ -26,6 +26,7 @@ import {
   StyledInputBase,
 } from "../../components/Search";
 import { ChatList } from "../../data";
+import { useGetChatsQuery } from "../../features/Api/ChatApi";
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     backgroundColor: "#44b700",
@@ -107,8 +108,16 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
     </Box>
   );
 };
+
 function Chats() {
+  const { data, isLoading, error } = useGetChatsQuery();
   const theme = useTheme();
+  if (error) {
+    console.log(error);
+  }
+  if (data) {
+    console.log(data);
+  }
   return (
     <Box
       sx={{
